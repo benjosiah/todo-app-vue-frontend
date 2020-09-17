@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    
     <router-view/>
   </div>
 </template>
@@ -10,25 +9,15 @@ import axios from 'axios'
 export default {
   name: 'App',
   data(){
-    return
-  },
-     created(){
-        let vm=this
+    return{
 
-    axios.get('/tasks')
-      .then(response => {
-        vm.todos=response.data
-        // console.log(response.data)
-        vm.todos.forEach(element => {
-            element.updating=false
-        });
-        // console.log(this.todos)
-      })
-  }
+    }
+  },
+ 
 }
 </script>
 
-<style>
+<style scope>
 body{
   margin: 0%;
   padding: 0px;
