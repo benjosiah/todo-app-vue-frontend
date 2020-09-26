@@ -7,9 +7,32 @@ import axios from 'axios'
 import {store} from './store/store'
 
 window.eventBus = new Vue()
-axios.defaults.baseURL = "http://localhost:8000/api"
+
 
 Vue.config.productionTip = false
+router.beforeEach((to, from, next)=>{
+  if(to.matched.some(records=> records.meta.requiresAuth)){
+    if (!store.getters.LoggedIn) {
+      next({
+        name: 'login'
+      })
+    }else{
+      next()
+    }
+    
+  }else if(to.matched.some(records=> records.meta.requiresvisitor)){
+    if (store.getters.LoggedIn) {
+      next({
+        name: 'todo'
+      })
+    }else{
+      next()
+    }
+  }else{
+    next()
+  }
+  
+})
 
 /* eslint-disable no-new */
 new Vue({

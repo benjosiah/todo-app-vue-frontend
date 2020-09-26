@@ -7,7 +7,7 @@
     
         <div class="todos">
             <todolist v-for="todo in todos" :key="todo.id" :todo="todo" />
-           
+           {{token}}
         </div>
     </div>
 </template>
@@ -31,10 +31,14 @@ export default {
   },
   created(){
       this.$store.dispatch('getTodos')
+     
   },
   computed:{
       todos(){
         return this.$store.getters.setTodo
+      },
+      token(){
+          return this.$store.state.token
       }
   },
   methods: {

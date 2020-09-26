@@ -18,7 +18,7 @@
     </div>
 </template>
 <script>
-export default{
+export default {
     name: 'todo-list',
     props:{
       todo: {
@@ -36,8 +36,8 @@ export default{
 
         }
     },
-    directives:{
-        focus:{
+    directives: {
+        focus: {
             inserted: function(el){
                 el.focus()
             }
