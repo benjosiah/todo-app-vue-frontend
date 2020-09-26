@@ -34,7 +34,7 @@ export const store = new Vuex.Store({
             return state.todos   
         },
         loggedIn(state){
-            return state.token !== null
+            return state.token != null
         }
         
        
@@ -68,13 +68,13 @@ export const store = new Vuex.Store({
         },
         logout(state){
             state.token=null
+            state.todos=null
         }
         
     },
     actions:{
         logOut(context){
             axios.defaults.headers.common['Authorization'] = 'Bearer '+ context.state.token
-            console.log(context.state.token)
             if (context.getters.loggedIn) {
                 return new Promise((resolve, reject)=>{
                     axios.post('/logout')
@@ -104,7 +104,6 @@ export const store = new Vuex.Store({
                     const token= response.data.access_token
                     localStorage.setItem('access_token', token)
                     context.commit('login', token)
-                    console.log(token)
                     resolve(response)
                 })
                 .catch(err=>{

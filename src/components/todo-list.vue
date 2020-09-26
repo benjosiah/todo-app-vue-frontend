@@ -4,13 +4,14 @@
             <div class="clear" @click="deletetTodo">
                 <img src="../assets/delete-sign.png" alt="">
             </div>
-            <input type="checkbox" name="" id="" v-model="done"  @change="doneEdit">
             <div v-if="!updating" @dblclick="editingTodo">
+                <input type="checkbox" name="" id="" v-model="done"  @change="doneEdit">
                 {{task}}
             
             </div>
             <div v-else>
-                <input type="text" v-model="task" @keyup.enter="doneEdit" @blur="doneEdit" v-focus>
+                <input type="checkbox" name="" id="" v-model="done"  @change="doneEdit">
+                <input type="text" v-model="task" @keyup.enter="doneEdit" @blur="doneEdit" v-focus class="edit">
             </div>
 
 

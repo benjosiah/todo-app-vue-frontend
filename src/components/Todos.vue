@@ -7,7 +7,6 @@
     
         <div class="todos">
             <todolist v-for="todo in todos" :key="todo.id" :todo="todo" />
-           {{token}}
         </div>
     </div>
 </template>
@@ -82,18 +81,22 @@ export default {
 
     }
     .task{
-        width: 300px;
+        max-width: 300px;
+        width: 80%;
         height:30px;
+        min-width: 200px;
         border-radius: 4px;
     }
     #submit{
-        width: 100px;
+        width: 10%;
+        min-width: 60px;
         height: 37px;
         border-radius: 4px;
     }
     .todos{
         margin: auto;
         width: 90%;
+        min-width: 200px;
         padding:10px;
         text-align: justify;
 

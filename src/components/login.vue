@@ -13,7 +13,7 @@
                 </div>
             </form>
 
-            {{token}}
+            
         </div>
     </div>
 </template>
@@ -41,7 +41,7 @@ export default {
                 password: this.password
             })
             .then(res=>{
-                this.$router.push({name: 'todo'})
+                this.$router.push({name:'todo'})
             })
         }
     }
@@ -56,8 +56,9 @@ export default {
 
     }
     .task{
-        width: 300px;
+        width: 80%;
         height:30px;
+        min-width: 150px;
         border-radius: 4px;
     }
     .hello div{

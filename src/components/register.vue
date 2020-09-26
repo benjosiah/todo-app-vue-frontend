@@ -53,8 +53,9 @@ export default {
 
     }
     .task{
-        width: 300px;
+        width: 80%;
         height:30px;
+        min-width: 150px;
         border-radius: 4px;
     }
     .hello div{

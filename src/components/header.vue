@@ -63,8 +63,8 @@ a{
     text-decoration: none;
 }
 ul{
-    float: right;
-    width: 50%;
+    
+    width: 80%;
 
 }
 li{
